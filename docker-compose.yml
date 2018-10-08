@@ -14,6 +14,8 @@ services:
  
     cbdb:
         image: couchbase/server:latest
+        volumes:
+            - db-data:/opt/couchbase/var
         ports:
             - "8091-8094:8091-8094"
         networks:
@@ -21,4 +23,6 @@ services:
         restart: always
 networks:
     backend:
+volumes:
+    db-data:
 
